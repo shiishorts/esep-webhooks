@@ -1,4 +1,5 @@
 using System.Text;
+using Amazon.Lambda.APIGatewayEvents;
 using Amazon.Lambda.Core;
 using Newtonsoft.Json;
 
@@ -16,7 +17,7 @@ public class Function
     /// <param name="input"></param>
     /// <param name="context"></param>
     /// <returns></returns>
-    public string FunctionHandler(object input, ILambdaContext context)
+    public APIGatewayProxyResponse FunctionHandler(object input, ILambdaContext context)
     {
         context.Logger.LogInformation($"FunctionHandler received: {input}");
 
@@ -41,7 +42,15 @@ public class Function
     
         var response = client.Send(webRequest);
         using var reader = new StreamReader(response.Content.ReadAsStream());
+        string readerBody = reader.ReadToEnd();
             
-        return reader.ReadToEnd();
+        return new APIGatewayProxyResponse {
+            StatusCode = (int)response.StatusCode,
+            Body = readerBody,
+            Headers = new Dictionary<string, string>
+            {
+                {"Content-Type", "application/json"}
+            }
+        };
     }
 }

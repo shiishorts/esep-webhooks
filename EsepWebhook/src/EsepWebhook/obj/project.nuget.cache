@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "/ABOGgv8+ts=",
+  "dgSpecHash": "5XcsakF8vvA=",
   "success": true,
   "projectFilePath": "C:\\Users\\white\\Downloads\\esep-webhooks\\EsepWebhook\\src\\EsepWebhook\\EsepWebhook.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\white\\.nuget\\packages\\amazon.lambda.apigatewayevents\\2.7.1\\amazon.lambda.apigatewayevents.2.7.1.nupkg.sha512",
     "C:\\Users\\white\\.nuget\\packages\\amazon.lambda.core\\2.7.0\\amazon.lambda.core.2.7.0.nupkg.sha512",
     "C:\\Users\\white\\.nuget\\packages\\amazon.lambda.serialization.systemtextjson\\2.4.4\\amazon.lambda.serialization.systemtextjson.2.4.4.nupkg.sha512",
     "C:\\Users\\white\\.nuget\\packages\\newtonsoft.json\\13.0.4\\newtonsoft.json.13.0.4.nupkg.sha512",
